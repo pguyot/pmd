@@ -98,7 +98,7 @@
         <pmd.plugin.version>3.20.0</pmd.plugin.version>
         <ant.version>1.10.13</ant.version>
         <javadoc.plugin.version>3.4.1</javadoc.plugin.version>
-        <antlr.version>4.11.1</antlr.version>
+	<antlr.version /> <!-- empty by default, profiles set it to 4.7.2 or later -->
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -940,6 +940,26 @@
     </pluginRepositories>
 
     <profiles>
+	<profile>
+	    <id>Java 7</id>
+	    <activation>
+		<jdk>[,1.8)</jdk>
+	    </activation>
+	    <properties>
+		<!-- antlr4 4.10+ requires java8 -->
+                <antlr.version>4.7.2</antlr.version>
+            </properties>
+	</profile>
+	<profile>
+	    <id>Java 8+</id>
+	    <activation>
+		<jdk>[1.8,)</jdk>
+	    </activation>
+	    <properties>
+		<!-- antlr4 4.10+ requires java8 -->
+                <antlr.version>4.11.1</antlr.version>
+            </properties>
+	</profile>
         <profile>
             <id>Java 18+</id>
             <activation>

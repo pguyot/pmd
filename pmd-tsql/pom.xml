@@ -11,6 +11,10 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <properties>
+        <java.version>8</java.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
