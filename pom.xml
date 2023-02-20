@@ -1097,6 +1097,7 @@
         <module>pmd-swift</module>
         <module>pmd-test</module>
         <module>pmd-tsql</module>
+        <module>pmd-typescript</module>
         <module>pmd-vm</module>
         <module>pmd-xml</module>
 
